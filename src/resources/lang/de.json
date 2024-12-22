@@ -1,0 +1,128 @@
+{
+    "app": {
+        "title": "Meine Anwendung",
+        "welcome": "Willkommen, {name}!",
+        "logout": "Abmelden",
+        "navigation": {
+            "dashboard": "Dashboard",
+            "users": "Benutzer",
+            "posts": "Beiträge",
+            "settings": "Einstellungen"
+        }
+    },
+    "crud": {
+        "actions": "Action",
+        "action": "Action",
+        "show": "Anzeigen",
+        "edit": "Bearbeiten",
+        "update": "Aktualisieren",
+        "save": "Speichern",
+        "delete": "Entfernen"
+    },
+    "auth": {
+        "login": {
+            "title": "Anmeldung",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "remember_me": "Angemeldet bleiben",
+            "button": "Anmelden",
+            "forgot_password": "Passwort vergessen?"
+        },
+        "register": {
+            "title": "Registrierung",
+            "name": "Name",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "confirm_password": "Passwort bestätigen",
+            "button": "Registrieren"
+        }
+    },
+    "users": {
+        "list": {
+            "title": "Benutzerliste",
+            "id": "ID",
+            "name": "Name",
+            "email": "E-Mail",
+            "actions": "Aktionen",
+            "edit": "Bearbeiten",
+            "delete": "Löschen",
+            "create_new": "Neuen Benutzer erstellen"
+        },
+        "form": {
+            "name": "Name",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "confirm_password": "Passwort bestätigen",
+            "submit": "Speichern",
+            "cancel": "Abbrechen"
+        },
+        "messages": {
+            "created": "Benutzer erfolgreich erstellt.",
+            "updated": "Benutzer erfolgreich aktualisiert.",
+            "deleted": "Benutzer erfolgreich gelöscht."
+        },
+        "errors": {
+            "name_required": "Der Name ist erforderlich.",
+            "email_required": "Die E-Mail ist erforderlich.",
+            "email_invalid": "Ungültiges E-Mail-Format.",
+            "password_required": "Das Passwort ist erforderlich.",
+            "password_min": "Das Passwort muss mindestens {min} Zeichen lang sein.",
+            "password_mismatch": "Die Passwörter stimmen nicht überein."
+        }
+    },
+    "posts": {
+        "list": {
+            "title": "Beitragsliste",
+            "id": "ID",
+            "title": "Titel",
+            "author": "Autor",
+            "created_at": "Erstellt am",
+            "actions": "Aktionen",
+            "edit": "Bearbeiten",
+            "delete": "Löschen",
+            "create_new": "Neuen Beitrag erstellen"
+        },
+        "form": {
+            "title": "Titel",
+            "content": "Inhalt",
+            "author": "Autor",
+            "submit": "Speichern",
+            "cancel": "Abbrechen"
+        },
+        "messages": {
+            "created": "Beitrag erfolgreich erstellt.",
+            "updated": "Beitrag erfolgreich aktualisiert.",
+            "deleted": "Beitrag erfolgreich gelöscht."
+        },
+        "errors": {
+            "title_required": "Der Titel ist erforderlich.",
+            "content_required": "Der Inhalt ist erforderlich.",
+            "author_required": "Der Autor ist erforderlich."
+        }
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "language": "Sprache",
+        "theme": "Thema",
+        "save": "Änderungen speichern",
+        "success": "Einstellungen erfolgreich gespeichert."
+    },
+    "validation": {
+        "required": "Das Feld {field} ist erforderlich.",
+        "email": "Das Feld {field} muss eine gültige E-Mail-Adresse sein.",
+        "min": "Das Feld {field} muss mindestens {min} Zeichen lang sein.",
+        "confirmed": "Das Feld {field} stimmt nicht mit der Bestätigung überein."
+    },
+    "errors": {
+        "404": {
+            "title": "Seite nicht gefunden",
+            "message": "Entschuldigung, die von Ihnen gesuchte Seite existiert nicht.",
+            "back": "Zurück zur Startseite"
+        },
+        "500": {
+            "title": "Interner Serverfehler",
+            "message": "Es ist ein Fehler auf dem Server aufgetreten. Bitte versuchen Sie es später erneut.",
+            "back": "Zurück zur Startseite"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "name": "sonecms/sone-core",
+    "type": "library",
+    "description": "sOne Core for Laravel 11.",
+    "keywords": [
+        "laravel",
+        "sone-core"
+    ],
+    "homepage": "https://github.com/sonecms/sone-core",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Andrej Kopp",
+            "email": "admin@sequel.one",
+            "homepage": "https://sequel.one",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "npm install --prefix vendor/sonecms/sone-core",
+            "npm run build --prefix vendor/sonecms/sone-core"
+        ],
+        "post-update-cmd": [
+            "npm install --prefix vendor/sonecms/sone-core",
+            "npm run build --prefix vendor/sonecms/sone-core"
+        ]
+    },
+    "require": {
+        "mcamara/laravel-localization": "^2.2",
+        "spatie/laravel-permission": "^6.10",
+        "tightenco/ziggy": "^2.4",
+        "maatwebsite/excel": "^3.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^9.0||^7.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3||~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "sOne\\Core\\": "src"
+        },
+        "files": [
+            "src/app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "sOne\\Core\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "sOne\\Core\\sOneCoreServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "name": "sone-core",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^5.2",
+        "autoprefixer": "^10.4.20",
+        "axios": "^1.7.4",
+        "bootstrap": "^5.3.3",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.47",
+        "sass": "^1.81.0",
+        "sass-loader": "^16.0.3",
+        "vite": "^6.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.7.1",
+        "@fortawesome/fontawesome-svg-core": "^6.7.1",
+        "@fortawesome/free-solid-svg-icons": "^6.7.1",
+        "@fortawesome/vue-fontawesome": "^3.0.8",
+        "@popperjs/core": "^2.11.8",
+        "flag-icon-css": "^4.1.7",
+        "jquery": "^3.7.1",
+        "select2": "^4.1.0-rc.0",
+        "vue-i18n": "^11.0.0-beta.1",
+        "vue-router": "^4.5.0",
+        "vue3-form-wizard": "^0.2.4",
+        "vue3-select": "^0.1.2",
+        "ziggy-js": "^2.4.1"
+    }
+}

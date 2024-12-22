@@ -1,0 +1,128 @@
+{
+    "app": {
+        "title": "My Application",
+        "welcome": "Welcome, {name}!",
+        "logout": "Logout",
+        "navigation": {
+            "dashboard": "Dashboard",
+            "users": "Users",
+            "posts": "Posts",
+            "settings": "Settings"
+        }
+    },
+    "crud": {
+        "actions": "Actions",
+        "action": "Action",
+        "show": "Show",
+        "edit": "Edit",
+        "update": "Update",
+        "save": "Save",
+        "delete": "Delete"
+    },
+    "auth": {
+        "login": {
+            "title": "Login",
+            "email": "Email",
+            "password": "Password",
+            "remember_me": "Remember me",
+            "button": "Login",
+            "forgot_password": "Forgot password?"
+        },
+        "register": {
+            "title": "Register",
+            "name": "Name",
+            "email": "Email",
+            "password": "Password",
+            "confirm_password": "Confirm password",
+            "button": "Register"
+        }
+    },
+    "users": {
+        "list": {
+            "title": "User List",
+            "id": "ID",
+            "name": "Name",
+            "email": "Email",
+            "actions": "Actions",
+            "edit": "Edit",
+            "delete": "Delete",
+            "create_new": "Create New User"
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "password": "Password",
+            "confirm_password": "Confirm password",
+            "submit": "Save",
+            "cancel": "Cancel"
+        },
+        "messages": {
+            "created": "User successfully created.",
+            "updated": "User successfully updated.",
+            "deleted": "User successfully deleted."
+        },
+        "errors": {
+            "name_required": "Name is required.",
+            "email_required": "Email is required.",
+            "email_invalid": "Invalid email format.",
+            "password_required": "Password is required.",
+            "password_min": "Password must be at least {min} characters.",
+            "password_mismatch": "Passwords do not match."
+        }
+    },
+    "posts": {
+        "list": {
+            "title": "Post List",
+            "id": "ID",
+            "title": "Title",
+            "author": "Author",
+            "created_at": "Created at",
+            "actions": "Actions",
+            "edit": "Edit",
+            "delete": "Delete",
+            "create_new": "Create New Post"
+        },
+        "form": {
+            "title": "Title",
+            "content": "Content",
+            "author": "Author",
+            "submit": "Save",
+            "cancel": "Cancel"
+        },
+        "messages": {
+            "created": "Post successfully created.",
+            "updated": "Post successfully updated.",
+            "deleted": "Post successfully deleted."
+        },
+        "errors": {
+            "title_required": "Title is required.",
+            "content_required": "Content is required.",
+            "author_required": "Author is required."
+        }
+    },
+    "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "theme": "Theme",
+        "save": "Save Changes",
+        "success": "Settings successfully saved."
+    },
+    "validation": {
+        "required": "The {field} field is required.",
+        "email": "The {field} field must contain a valid email address.",
+        "min": "The {field} field must be at least {min} characters.",
+        "confirmed": "The {field} field does not match the confirmation."
+    },
+    "errors": {
+        "404": {
+            "title": "Page Not Found",
+            "message": "Sorry, the page you are looking for does not exist.",
+            "back": "Back to Home"
+        },
+        "500": {
+            "title": "Internal Server Error",
+            "message": "An error occurred on the server. Please try again later.",
+            "back": "Back to Home"
+        }
+    }
+}
