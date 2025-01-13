@@ -69,7 +69,8 @@
 
 @php
     sVite([
-        'vendor/sonecms/sone-core/src/resources/js/app.js',
+        'packages/sonecms/sone-core/src/resources/js/app.js',
+        'packages/sonecms/sone-core/src/resources/sass/app.scss',
     ])
 @endphp
 </body>

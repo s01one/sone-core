@@ -1,9 +1,8 @@
 <?php
 
-
 use Illuminate\Support\Facades\File;
 
-if (!function_exists('vite_package')) {
+if (!function_exists('sVite')) {
     function sVite(array $assets): void
     {
         $manifestPath = public_path('vendor/sone/core/.vite/manifest.json');
@@ -13,15 +12,31 @@ if (!function_exists('vite_package')) {
 
         $manifest = json_decode(File::get($manifestPath), true);
         foreach ($assets as $asset) {
-            if (!isset($manifest[$asset])) {
+            $matchedKey = null;
+            foreach ($manifest as $key => $value) {
+                if (substr($key, -strlen($asset)) === $asset) {
+                    $matchedKey = $key;
+                    break;
+                }
+            }
+
+            if (!$matchedKey) {
                 throw new \Exception("Asset {$asset} not found in sOne Core Vite manifest.");
             }
 
-            $assetPath = $manifest[$asset]['file'];
+            $assetEntry = $manifest[$matchedKey];
+            $assetPath = $assetEntry['file'];
             $assetUrl = asset('vendor/sone/core/' . $assetPath);
 
             if (str_ends_with($asset, '.js')) {
                 echo '<script type="module" src="' . $assetUrl . '"></script>';
+            }
+
+            if (isset($assetEntry['css'])) {
+                foreach ($assetEntry['css'] as $css) {
+                    $cssUrl = asset('vendor/sone/core/' . $css);
+                    echo '<link rel="stylesheet" href="' . $cssUrl . '">';
+                }
             } elseif (str_ends_with($asset, '.css')) {
                 echo '<link rel="stylesheet" href="' . $assetUrl . '">';
             }

@@ -49,7 +49,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "sOne\\Core\\": "tests"
+            "sOne\\Core\\Tests": "tests"
         }
     },
     "scripts": {

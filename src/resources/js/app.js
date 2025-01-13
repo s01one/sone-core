@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
+import '../sass/app.scss';
 import App from './App.vue';
 import initRouter from './router/index';
 import { loadLocaleMessages, defaultLocale, locales } from './config/i18n';

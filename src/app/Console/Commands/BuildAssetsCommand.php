@@ -4,6 +4,8 @@ namespace sOne\Core\app\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class BuildAssetsCommand extends Command
 {
@@ -12,33 +14,50 @@ class BuildAssetsCommand extends Command
 
     public function handle()
     {
+        $this->info("Building assets...");
+
         $packagePath = base_path('vendor/sonecms/sone-core');
-        $this->info($packagePath);
-        $this->info("Переходим в директорию: $packagePath");
-        chdir($packagePath);
 
-        $this->info("Устанавливаем npm зависимости...");
-        exec('npm install', $output, $returnVar);
-        if ($returnVar !== 0) {
-            $this->error("Ошибка при установке npm зависимостей.");
+        if (!is_dir($packagePath)) {
+            $this->error("Package directory not found: {$packagePath}");
             return;
         }
 
-        $this->info("Запускаем сборку Vite...");
-        exec('npm run build', $output, $returnVar);
-        if ($returnVar !== 0) {
-            $this->error("Ошибка при сборке Vite.");
+        $this->info("Running npm install...");
+        $process = Process::fromShellCommandline('npm install');
+        $process->setWorkingDirectory($packagePath);
+        $process->setTimeout(300);
+        $process->run(function ($type, $buffer) {
+            echo $buffer;
+        });
+
+        if (!$process->isSuccessful()) {
+            $this->error("Error during npm install.");
+            $this->error($process->getErrorOutput());
             return;
         }
 
-        chdir(base_path());
+        $this->info("Running npm run build...");
+        $process = Process::fromShellCommandline('npm run build');
+        $process->setWorkingDirectory($packagePath);
+        $process->setTimeout(600);
+        $process->run(function ($type, $buffer) {
+            echo $buffer;
+        });
 
-        $this->info("Публикуем ассеты...");
+        if (!$process->isSuccessful()) {
+            $this->error("Error during npm run build.");
+            $this->error($process->getErrorOutput());
+            return;
+        }
+
+        $this->info("Publishing assets...");
         Artisan::call('vendor:publish', [
             '--tag' => 'public',
             '--provider' => "sOne\Core\sOneCoreServiceProvider",
+            '--force' => true,
         ]);
 
-        $this->info("Сборка и публикация ассетов завершены успешно.");
+        $this->info("Assets built and published successfully.");
     }
 }

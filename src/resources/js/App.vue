@@ -19,7 +19,6 @@ export default {
         Main,
     },
     mounted() {
-        // Скрываем preloader после загрузки приложения
         const preloader = document.getElementById("preloader");
         if (preloader) {
             preloader.style.opacity = "0";

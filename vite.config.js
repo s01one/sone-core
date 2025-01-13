@@ -7,8 +7,8 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                '/vendor/sonecms/sone-core/src/resources/js/app.js',
-                '/vendor/sonecms/sone-core/src/resources/sass/app.scss',
+                path.resolve(__dirname, 'src/resources/js/app.js'),
+                path.resolve(__dirname, 'src/resources/sass/app.scss'),
             ],
             refresh: true,
         }),
@@ -22,13 +22,13 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: path.resolve('vendor/sonecms/sone-core/src/public/vendor/sonecms/core'),
+        outDir: path.resolve(__dirname, 'src/public/vendor/sone/core'),
         emptyOutDir: true,
         manifest: true,
         rollupOptions: {
             input: [
-                path.resolve('vendor/sonecms/sone-core/src/resources/js/app.js'),
-                path.resolve('vendor/sonecms/sone-core/src/resources/sass/app.scss')
+                path.resolve(__dirname, 'src/resources/js/app.js'),
+                path.resolve(__dirname, 'src/resources/sass/app.scss'),
             ],
             output: {
                 entryFileNames: 'js/[name].js',
@@ -48,8 +48,10 @@ export default defineConfig({
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             'vue3-select': path.resolve(__dirname, 'node_modules/vue3-select'),
             'ziggy-js': path.resolve(__dirname, 'node_modules/ziggy-js'),
-            '@sonecore-sass': path.resolve('vendor/sonecms/sone-core/src/resources/sass'),
-            '@sonecore-js': path.resolve('vendor/sonecms/sone-core/src/resources/js'),
-        }
-    }
+            '@sonecore-sass': path.resolve(__dirname, 'src/resources/sass'),
+            '@sonecore-js': path.resolve(__dirname, 'src/resources/js'),
+        },
+        preserveSymlinks: true,
+    },
+    preserveSymlinks: true
 });

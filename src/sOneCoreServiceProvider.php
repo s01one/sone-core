@@ -41,7 +41,7 @@ class sOneCoreServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'sone');
 
         $this->publishes([
-            __DIR__ . '/resources/views' => base_path('resources/views/vendor/sone/core')
+            __DIR__ . '/resources/views' => base_path('resources/views/vendor/sone')
         ], 'views');
 
         $this->publishes([

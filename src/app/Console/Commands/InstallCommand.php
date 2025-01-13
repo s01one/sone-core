@@ -17,12 +17,12 @@ class InstallCommand extends Command
         $this->info('Publishing configuration and views...');
         Artisan::call('vendor:publish', [
             '--provider' => 'sOne\Core\sOneCoreServiceProvider',
-            '--tag' => ['config', 'views'],
+            '--tag' => ['config', 'views', 'public'],
             '--force' => true,
         ]);
 
         $this->info('Building and publishing assets...');
-        Artisan::call('install:api');
+        // Artisan::call('install:api');
         Artisan::call('sone:core:build');
         Artisan::call('ziggy:generate');
         Artisan::call('optimize:clear');
